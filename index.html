@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rachael Ventures | Property & Marketplace</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;color:#222;background:#f7f7f7}
+header{background:#111;color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;position:sticky;top:0;z-index:5}
+.logo{font-size:24px;font-weight:800}.wa{background:#25d366;color:#fff;padding:11px 16px;border-radius:25px;text-decoration:none;font-weight:bold}
+.hero{padding:65px 6%;background:linear-gradient(135deg,#222,#555);color:white}
+.hero h1{font-size:42px;margin:0 0 12px}.hero p{font-size:18px;max-width:650px;line-height:1.5}
+.btn{display:inline-block;background:#f5b400;color:#111;padding:13px 20px;border-radius:7px;text-decoration:none;font-weight:bold;margin-top:10px}
+section{padding:38px 6%;max-width:1200px;margin:auto}h2{margin-top:0}
+.categories,.listings{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:18px}
+.card{background:white;padding:22px;border-radius:12px;box-shadow:0 3px 14px #00000012}.card h3{margin-top:0}
+.listing{overflow:hidden;padding:0}.listing .pic{height:150px;background:#ddd;display:flex;align-items:center;justify-content:center;font-size:48px}
+.listing .body{padding:18px}.price{font-size:20px;font-weight:bold;margin:8px 0}
+form{background:white;padding:25px;border-radius:12px;box-shadow:0 3px 14px #00000012;max-width:700px}
+input,select,textarea{width:100%;padding:13px;margin:7px 0 15px;border:1px solid #ccc;border-radius:7px;font:inherit}
+button{border:0;background:#111;color:white;padding:13px 20px;border-radius:7px;font-weight:bold;cursor:pointer}
+footer{background:#111;color:white;padding:30px 6%;margin-top:30px}
+.small{color:#666;font-size:14px}
+</style>
+</head>
+<body>
+<header>
+<div class="logo">Rachael Ventures</div>
+<a class="wa" href="https://wa.me/254797281381" target="_blank">WhatsApp</a>
+</header>
+
+<div class="hero">
+<h1>Buy. Sell. Advertise.</h1>
+<p>Find properties, cars, homes, pets and business opportunities. Want customers to see your item? Post your listing with Rachael Ventures.</p>
+<a class="btn" href="#post">Post Your Listing</a>
+</div>
+
+<section>
+<h2>What can you advertise?</h2>
+<div class="categories">
+<div class="card"><h3>🏠 Property</h3><p>Land, plots, houses and commercial property.</p></div>
+<div class="card"><h3>🚗 Cars</h3><p>Advertise vehicles and connect with buyers.</p></div>
+<div class="card"><h3>🐕 Pets</h3><p>Puppies and other pets for sale.</p></div>
+<div class="card"><h3>🏢 Businesses</h3><p>Shops, stalls, offices and business opportunities.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Featured Listings</h2>
+<div class="listings">
+<div class="card listing"><div class="pic">🏡</div><div class="body"><h3>Kikuyu Plot</h3><div class="price">Contact for price</div><p>50×100 plot. Serious buyers welcome.</p><a class="btn" href="https://wa.me/254797281381?text=Hello%20Rachael%20Ventures%2C%20I%27m%20interested%20in%20the%20Kikuyu%20plot." target="_blank">Enquire</a></div></div>
+<div class="card listing"><div class="pic">🐶</div><div class="body"><h3>Puppies</h3><div class="price">Contact for price</div><p>Ask for current availability.</p><a class="btn" href="https://wa.me/254797281381?text=Hello%20Rachael%20Ventures%2C%20I%27m%20interested%20in%20the%20puppies." target="_blank">Enquire</a></div></div>
+<div class="card listing"><div class="pic">🏢</div><div class="body"><h3>Commercial Spaces</h3><div class="price">Available spaces</div><p>Ask about shops, stalls and commercial spaces.</p><a class="btn" href="https://wa.me/254797281381?text=Hello%20Rachael%20Ventures%2C%20I%27m%20looking%20for%20a%20commercial%20space." target="_blank">Enquire</a></div></div>
+</div>
+</section>
+
+<section id="post">
+<h2>Post Your Listing</h2>
+<p>Send your details below. This demo form opens WhatsApp with the information you enter.</p>
+<form id="listingForm">
+<label>Your name</label><input id="name" required>
+<label>Phone number</label><input id="phone" required>
+<label>What are you advertising?</label>
+<select id="category"><option>Property</option><option>Car</option><option>House</option><option>Pet</option><option>Business/Shop</option><option>Other</option></select>
+<label>Price</label><input id="price" placeholder="e.g. KSh 500,000">
+<label>Description</label><textarea id="description" rows="5" required></textarea>
+<button type="submit">Send Listing on WhatsApp</button>
+<p class="small">You can charge clients separately for basic, featured or premium advertising.</p>
+</form>
+</section>
+
+<footer>
+<strong>Rachael Ventures</strong><br><br>
+Property • Cars • Houses • Pets • Business Listings<br>
+Ruaka, Kiambu, Kenya<br><br>
+Email: kigondurachael27@gmail.com<br>
+Phone/WhatsApp: 0797281381
+</footer>
+
+<script>
+document.getElementById('listingForm').addEventListener('submit', function(e){
+e.preventDefault();
+const msg=`Hello Rachael Ventures, I want to post a listing.%0A%0AName: ${encodeURIComponent(name.value)}%0APhone: ${encodeURIComponent(phone.value)}%0ACategory: ${encodeURIComponent(category.value)}%0APrice: ${encodeURIComponent(price.value)}%0ADescription: ${encodeURIComponent(description.value)}`;
+window.open('https://wa.me/254797281381?text='+msg,'_blank');
+});
+</script>
+</body>
+</html>
